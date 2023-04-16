@@ -4,7 +4,7 @@ const request = require("supertest");
 const app = require("./app");
 
 describe("POST/", () => {
-  test("Posting ", async () => {
+  test("Sending post request and receiving back user data from github API ", async () => {
     const res = await request(app)
       .post("/")
       .send({ developers: ["Longmatt76", "aturok"] });
