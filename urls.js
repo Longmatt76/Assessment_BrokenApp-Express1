@@ -10,7 +10,9 @@ const e = require("express");
 // note, currently if there's an error thrown because of the fake url in urls.txt
 // it won't write the new files, if I remove the fake url it works fine. I know why 
 // this happens, the error is occuring before fs.writefiles and it jumps the function 
-// to the catch before it can execute the writes. I just don't know how to fix it. 
+// to the catch before it can execute the writes. I just don't know how to fix it. I 
+// tried wrapping just line 46 (where I think the error actually occurs) in a try catch but then 
+// if there's an error the html varible in line 47 is undefined so there's nothing to write. 
 
 
 function getUrls(path) {
